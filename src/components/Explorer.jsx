@@ -16,6 +16,7 @@ const Explorer = () => {
   const [location, setLocation] = useState('');
   const [latitude, setLatitude] = useState('');
   const [longitude, setLongitude] = useState('');
+  const [tipo, setTipo] = useState('');
   const [displayMap, setDisplayMap] = useState(false);
   const [displayError, setDisplayError] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
@@ -31,6 +32,7 @@ const Explorer = () => {
       setLocation(response.data[0].display_name);
       setLatitude(response.data[0].lat);
       setLongitude(response.data[0].lon);
+      setTipo(response.data[0].type);
       setDisplayMap(true);
       setDisplayError(false);
       console.log (response);
@@ -61,6 +63,7 @@ const Explorer = () => {
                 city={location}
                 lat={latitude}
                 lon={longitude}
+                type={tipo}
               />
             </Col>
           </Row>
